@@ -2,7 +2,6 @@ import { db } from "~/server/db";
 import { files as filesSchema, folders as foldersSchema } from "~/server/db/schema";
 import DriveContents from "../../drive-contents";
 import { eq } from "drizzle-orm";
-import z from "zod";
 
 export default async function GoogleDriveClone(props: {
   params: Promise<{ folderId: string }>
