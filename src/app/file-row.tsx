@@ -1,8 +1,8 @@
 import { FileIcon, Folder as FolderIcon } from "lucide-react";
-import type { File, Folder } from "~/lib/mock-data";
+import type { files, folders } from "~/server/db/schema";
 
 export function FileRow({ file }: {
-    file: File
+    file: typeof files.$inferSelect
 }) {
     return (
         <li key={file.id} className="px-6 py-4 border-b border-gray-700 hover:bg-gray-750">
@@ -25,7 +25,7 @@ export function FileRow({ file }: {
 }
 
 export function FolderRow({ folder, onFolderClick }: {
-    folder: Folder,
+    folder: typeof folders.$inferSelect,
     onFolderClick: () => void
 }) {
     return (
